@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const { MongoClient, ServerApiVersion } = require("mongodb");
+
 const sessionRoutes = require('./routes/sessionRoutes');
+const homeRoutes = require('./routes/homeRoutes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -20,33 +22,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', './templates');
 
-// Root route - show a random joke
-app.get('/', async (req, res) => {
-  try {
-    const response = await fetch('https://official-joke-api.appspot.com/random_joke');
-    const data = await response.json();
-    res.render('index', { joke: data });
-  } catch {
-    res.render('index', {
-      joke: {
-        setup: 'Why don’t programmers like nature?',
-        punchline: 'Too many bugs.'
-      }
-    });
-  }
-});
-
-// Main app start
+// Start the app
 async function main() {
   try {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(collectionName);
 
-    // Make the MongoDB collection accessible in routes
     app.locals.collection = collection;
 
-    // Use express.Router() for all session routes
+    // Use routers
+    app.use('/', homeRoutes);
     app.use('/', sessionRoutes);
 
     app.listen(port, () => {

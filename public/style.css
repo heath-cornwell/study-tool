@@ -52,7 +52,7 @@ form button {
 
 .notes-display,
 pre {
-  text-align: left; /* Align displayed notes to the left */
+  text-align: left;
 }
 
 .session-card {
