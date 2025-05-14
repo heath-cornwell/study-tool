@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 const uri = process.env.MONGO_CONNECTION_STRING || 'mongodb://localhost:27017';
 const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
-const databaseName = "studycompaniondb";
+const databaseName = "CMSC335DB";
 const collectionName = "sessions";
 
 // Middleware
@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', './templates');
 
-// ✅ Render homepage and pass host for QR code
+// Render homepage and pass host for QR code
 app.get('/', (req, res) => {
   const host = req.protocol + '://' + req.get('host');
   res.render('index', { host });
