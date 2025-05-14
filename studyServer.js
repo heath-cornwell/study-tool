@@ -4,9 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const { ObjectId } = require('mongodb');
-const fetch = require('node-fetch');
 const app = express();
-const port = process.argv[2];
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -83,27 +82,9 @@ async function main() {
     const db = client.db(databaseName);
     collection = db.collection(collectionName);
     app.listen(port);
-    console.log(`Web server started and running at http://localhost:${port}`);
-    process.stdout.write('Stop to shutdown the server: ');
   } catch (e) {
     console.error(e);
   }
 }
-
-process.stdin.setEncoding('utf8');
-process.stdin.on('readable', () => {
-  const dataInput = process.stdin.read();
-  if (dataInput !== null) {
-    const command = dataInput.trim();
-    if (command === "stop") {
-      process.stdout.write('Shutting down the server');
-      client.close();
-      process.exit(0);
-    } else {
-      process.stdout.write('Stop to shutdown the server: ');
-    }
-    process.stdin.resume();
-  }
-});
 
 main();
