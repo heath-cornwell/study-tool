@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Take Notes</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Take Notes</h1>
+  <div class="card">
+    <form action="/log" method="POST">
+      <label for="topic">Title of Notes:</label><br>
+      <input type="text" id="topic" name="topic" required><br>
+
+      <label for="notes">Notes:</label><br>
+      <textarea id="notes" name="notes" rows="10" cols="70" required></textarea><br>
+
+      <label for="date">Date:</label><br>
+      <input type="date" id="date" name="date" required><br>
+
+      <label for="duration">Time Spent (minutes):</label><br>
+      <input type="number" id="duration" name="duration" required><br>
+
+      <button type="submit">Save Session</button>
+    </form>
+  </div>
+  <a href="/">Back to Home</a>
+</body>
+</html>

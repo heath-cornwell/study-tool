@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Study Session</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Edit Study Session</h1>
+
+  <div class="card">
+    <form action="/edit/<%= session._id %>" method="POST">
+      <label for="topic">Title of Notes:</label><br>
+      <input type="text" id="topic" name="topic" value="<%= session.topic %>" required><br>
+
+      <label for="notes">Notes:</label><br>
+      <textarea id="notes" name="notes" rows="10" cols="70" required><%= session.notes %></textarea><br>
+
+      <label for="date">Date:</label><br>
+      <input type="date" id="date" name="date" value="<%= session.date %>" required><br>
+
+      <label for="duration">Time Spent (minutes):</label><br>
+      <input type="number" id="duration" name="duration" value="<%= session.duration %>" required><br>
+
+      <button type="submit">Update Session</button>
+    </form>
+  </div>
+
+  <a href="/sessions">Back to Sessions</a>
+</body>
+</html>

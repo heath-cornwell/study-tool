@@ -1,0 +1,16 @@
+{
+  "name": "study-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "studyServer.js",
+  "scripts": {
+    "start": "node studyServer.js"
+  },
+    "dependencies": {
+      "body-parser": "^2.2.0",
+      "dotenv": "^16.4.7",
+      "ejs": "^3.1.10",
+      "express": "^5.1.0",
+      "mongodb": "^6.15.0"
+    }
+}
