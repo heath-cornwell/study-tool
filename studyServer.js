@@ -21,9 +21,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', './templates');
 
-// Render homepage (no joke here anymore)
+// ✅ Render homepage and pass host for QR code
 app.get('/', (req, res) => {
-  res.render('index');
+  const host = req.protocol + '://' + req.get('host');
+  res.render('index', { host });
 });
 
 async function main() {
@@ -32,7 +33,7 @@ async function main() {
     const db = client.db(databaseName);
     const collection = db.collection(collectionName);
 
-    // Study session routes
+    // Log a study session
     app.get('/log', (req, res) => {
       res.render('log');
     });
@@ -44,11 +45,13 @@ async function main() {
       res.render('submitted', { host });
     });
 
+    // View past sessions
     app.get('/sessions', async (req, res) => {
       const sessions = await collection.find().sort({ date: -1 }).toArray();
       res.render('sessions', { sessions });
     });
 
+    // Edit a session
     app.get('/edit/:id', async (req, res) => {
       const { ObjectId } = require('mongodb');
       const session = await collection.findOne({ _id: new ObjectId(req.params.id) });
@@ -69,18 +72,20 @@ async function main() {
       res.redirect('/sessions');
     });
 
+    // Remove one session
     app.post('/delete/:id', async (req, res) => {
       const { ObjectId } = require('mongodb');
       await collection.deleteOne({ _id: new ObjectId(req.params.id) });
       res.redirect('/sessions');
     });
 
+    // Remove all sessions
     app.post('/deleteAll', async (req, res) => {
       await collection.deleteMany({});
       res.redirect('/sessions');
     });
 
-    // Use /joke route to satisfy express.Router() requirement
+    // Add /joke route using express.Router()
     app.use('/', jokeRoutes);
 
     app.listen(port, () => {
