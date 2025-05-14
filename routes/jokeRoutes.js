@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-// GET /
-router.get('/', async (req, res) => {
+// GET /joke — Separate joke page
+router.get('/joke', async (req, res) => {
   try {
     const response = await fetch('https://official-joke-api.appspot.com/random_joke');
     const data = await response.json();
-    res.render('index', { joke: data });
+    res.render('joke', { joke: data });
   } catch {
-    res.render('index', {
+    res.render('joke', {
       joke: {
-        setup: 'Why did the developer go broke?',
-        punchline: 'Because he used up all his cache.'
+        setup: 'Why don’t programmers like nature?',
+        punchline: 'Too many bugs.'
       }
     });
   }
