@@ -1,6 +1,129 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: azure;
+  color: black;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* min-height: 100vh; */
+  text-align: center;
+}
+
+h1 {
+  color: slateblue;
+}
+
+a {
+  display: inline-block;
+  margin: 10px;
+  color: cornflowerblue;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+form input,
+form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+
+form button {
+  padding: 10px 20px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.notes-display,
+pre {
+  text-align: left;
+}
+
+.session-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+button {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: skyblue;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+a button {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+a button:hover {
+  background-color: skyblue;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.session-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 700px;
+  text-align: left;
+}
 
 .qr-card {
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 12px;
   padding: 20px;
   margin: 30px auto;
