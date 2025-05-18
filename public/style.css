@@ -22,6 +22,27 @@ a {
   text-decoration: none;
 }
 
+a button {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+button,
+a button {
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin: 10px 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover,
+a button:hover {
+  background-color: skyblue;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -40,74 +61,9 @@ form textarea {
   box-sizing: border-box;
 }
 
-
-form button {
-  padding: 10px 20px;
-  background-color: cornflowerblue;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
 .notes-display,
 pre {
   text-align: left;
-}
-
-.session-card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
-  text-align: left;
-}
-
-button {
-  background-color: cornflowerblue;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: skyblue;
-}
-
-.card {
-  background-color: white;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
-  text-align: left;
-}
-
-a button {
-  background-color: cornflowerblue;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  margin: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-a button:hover {
-  background-color: skyblue;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
 }
 
 .session-card {
@@ -121,17 +77,24 @@ ul {
   text-align: left;
 }
 
+.card,
 .qr-card {
   background-color: white;
   border-radius: 12px;
   padding: 20px;
-  margin: 30px auto;
+  margin: 20px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: fit-content;
   text-align: center;
+  width: fit-content;
+  max-width: 600px;
 }
 
 .qr-card img {
   display: block;
   margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }

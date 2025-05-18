@@ -73,9 +73,7 @@ async function main() {
     });
 
     app.use('/', jokeRoutes);
-    app.listen(port, () => {
-      console.log(`Server running on port ${port}`);
-    });
+    app.listen(port);
   } catch (e) {
     console.error(e);
   }
