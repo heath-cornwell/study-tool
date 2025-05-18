@@ -9,11 +9,11 @@
   <h1>Past Study Sessions</h1>
   <ul>
     <% sessions.forEach(function(session) { %>
-      <li class="session-card">
+      <li class="session-container">
         <strong><%= session.topic %></strong> on <%= session.date %> for <%= session.duration %> minutes.
-        <div style="margin-left: 1em;"><br>
+          <div class="m"><br>
           <strong>Notes:</strong><br>
-          <pre style="white-space: pre-wrap;"><%= session.notes || 'None' %></pre>
+          <pre class="notes-text"><%= session.notes || 'None' %></pre>
           <form action="/edit/<%= session._id %>" method="GET" style="display:inline;">
             <button type="submit">Edit</button>
           </form>

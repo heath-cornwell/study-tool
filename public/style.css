@@ -22,12 +22,15 @@ a {
   text-decoration: none;
 }
 
-a button {
-  padding: 10px 20px;
-  font-size: 20px;
+button {
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin: 10px 5px;
+  padding: 8px 12px;
 }
 
-button,
 a button {
   background-color: cornflowerblue;
   color: white;
@@ -35,12 +38,43 @@ a button {
   border-radius: 6px;
   margin: 10px 5px;
   padding: 8px 12px;
-  cursor: pointer;
+  font-size: 20px;
 }
 
-button:hover,
+button:hover {
+  background-color: skyblue;
+}
+
 a button:hover {
   background-color: skyblue;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+.joke-link {
+  margin-top: 30px;
+}
+
+.qr-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  text-align: center;
+}
+
+.qr-container img {
+  display: block;
+  margin: 0 auto;
 }
 
 form {
@@ -61,12 +95,7 @@ form textarea {
   box-sizing: border-box;
 }
 
-.notes-display,
-pre {
-  text-align: left;
-}
-
-.session-card {
+.session-container {
   background-color: white;
   border-radius: 12px;
   padding: 20px;
@@ -77,8 +106,19 @@ pre {
   text-align: left;
 }
 
-.card,
-.qr-card {
+.notes-text {
+  white-space: pre-wrap;
+}
+
+pre {
+  text-align: left;
+}
+
+.notes-display {
+  text-align: left;
+}
+
+.container {
   background-color: white;
   border-radius: 12px;
   padding: 20px;
@@ -89,12 +129,6 @@ pre {
   max-width: 600px;
 }
 
-.qr-card img {
-  display: block;
-  margin: 0 auto;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
+.m {
+  margin-left: 1em;
 }

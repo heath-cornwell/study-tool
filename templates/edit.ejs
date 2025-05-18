@@ -8,7 +8,7 @@
 <body>
   <h1>Edit Study Session</h1>
 
-  <div class="card">
+  <div class="container">
     <form action="/edit/<%= session._id %>" method="POST">
       <label for="topic">Title of Notes:</label><br>
       <input type="text" id="topic" name="topic" value="<%= session.topic %>" required><br>
